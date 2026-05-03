@@ -49,7 +49,7 @@ Database attuale della sua vita:
 """ + json.dumps(db, ensure_ascii=False, indent=2)
     
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-3-5-sonnet-20241022",
         max_tokens=500,
         system=system,
         messages=[{"role": "user", "content": prompt}]
