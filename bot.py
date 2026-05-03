@@ -145,7 +145,7 @@ Rispondi SOLO con il JSON, niente altro."""
         
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         response = client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model="claude-3-5-sonnet-20241022",
             max_tokens=1000,
             messages=[{"role": "user", "content": parse_prompt}]
         )
@@ -178,7 +178,7 @@ async def remind(context: ContextTypes.DEFAULT_TYPE):
     
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     response = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-3-5-sonnet-20241022",
         max_tokens=200,
         system="Sei l'assistente di una persona con ADHD. Manda un promemoria breve e motivante su cosa fare adesso. Una cosa sola. In italiano.",
         messages=[{"role": "user", "content": f"Database: {json.dumps(db, ensure_ascii=False)}. Dimmi UNA cosa da fare adesso."}]
